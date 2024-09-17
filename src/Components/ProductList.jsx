@@ -11,12 +11,63 @@ const ProductList = () => {
 
   return (
     <div className="product-list">
-      <h2 className="product-list-title">Products</h2>
-      <ul className="product-list-items">
-     
-      </ul>
+    <h2 className="product-list-title">Products</h2>
+    <ul className="product-list-items">
+    {products.map(product => (
+      <li key={product.id} className="product-list-item">
+      <span>{product.name} - ${product.price}</span>
+      <button>
+      Add to Cart
+      </button>
+      </li>
+    ))}
+    </ul>
     </div>
   );
 };
+
+
+
+
+
+
+
+
+/*
+return (
+  <div className="product-list">
+  <h2 className="product-list-title">Products</h2>
+  <ul className="product-list-items">
+  {products.map(product => (
+    <li key={product.id} className="product-list-item">
+    <span>{product.name} - ${product.price}</span>
+    <button
+    className={`add-to-cart-btn ${disabledProducts.includes(product.id) ? 'disabled' : ''}`}
+    onClick={() => handleAddToCart(product)}
+    disabled={disabledProducts.includes(product.id)} // Disable button if product is in disabledProducts
+    >
+    Add to Cart
+    </button>
+    </li>
+  ))}
+  </ul>
+  </div>
+);
+};*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export default ProductList;
